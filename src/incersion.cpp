@@ -14,7 +14,7 @@ void insertionSort(int arr[], int n) {
     }
 }
 
-void printArray(const int arr[], int n) {
+void imprimirarreglo(const int arr[], int n) {
     for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }
@@ -26,7 +26,7 @@ int main() {
     int n = sizeof(arr) / sizeof(arr[0]);
 
     cout << "Arreglo original: ";
-    printArray(arr, n);
+    immi(arr, n);
 
     insertionSort(arr, n);
 
