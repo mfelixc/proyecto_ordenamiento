@@ -1,11 +1,8 @@
 
-
 #include <iostream>
 #include <random>
 using namespace std;
 
-
-// GENERADOR DE ARREGLOS POR SEMILLA
 
 enum Patron { ALEATORIO, ASCENDENTE, DESCENDENTE, CASI_ORDENADO, DUPLICADOS };
 const int NUM_PATRONES = 5;
@@ -23,7 +20,6 @@ void generarArreglo(int arr[], int n, int patron, unsigned semilla) {
     mt19937 gen(semilla);   
 
     if (patron == ALEATORIO) {
-
         for (int i = 0; i < n; i++) {
             arr[i] = gen() % 1001;
         }
@@ -56,6 +52,58 @@ void generarArreglo(int arr[], int n, int patron, unsigned semilla) {
         for (int i = 0; i < n; i++) {
             arr[i] = gen() % 5;
         }
+    }
+}
+
+
+//ALGORITMOS DE ORDENAMIENTO
+
+
+//  Insercion 
+void insercion(int arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];    
+        int j = i - 1;
+
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;     
+    }
+}
+
+// Quicksort 
+int particion(int arr[], int bajo, int alto) {
+    int medio = (bajo + alto) / 2;
+    int temp = arr[medio];
+    arr[medio] = arr[alto];
+    arr[alto] = temp;
+
+    int pivote = arr[alto];
+    int i = bajo - 1;  
+
+    for (int j = bajo; j < alto; j++) {
+        if (arr[j] <= pivote) {
+            i++;
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+
+    temp = arr[i + 1];
+    arr[i + 1] = arr[alto];
+    arr[alto] = temp;
+    return i + 1;
+}
+
+void quickSort(int arr[], int bajo, int alto) {
+    if (bajo < alto) {
+        int pi = particion(arr, bajo, alto);
+        quickSort(arr, bajo, pi - 1);    
+        quickSort(arr, pi + 1, alto);    
     }
 }
 
