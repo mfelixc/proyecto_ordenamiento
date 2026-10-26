@@ -1,8 +1,6 @@
-
 #include <iostream>
 #include <random>
 using namespace std;
-
 
 enum Patron { ALEATORIO, ASCENDENTE, DESCENDENTE, CASI_ORDENADO, DUPLICADOS };
 const int NUM_PATRONES = 5;
@@ -15,21 +13,17 @@ const char* nombrePatron(int p) {
     return "duplicados";
 }
 
-
 void generarArreglo(int arr[], int n, int patron, unsigned semilla) {
     mt19937 gen(semilla);   
-
     if (patron == ALEATORIO) {
         for (int i = 0; i < n; i++) {
             arr[i] = gen() % 1001;
         }
     } else if (patron == ASCENDENTE) {
-
         for (int i = 0; i < n; i++) {
             arr[i] = i;
         }
     } else if (patron == DESCENDENTE) {
-
         for (int i = 0; i < n; i++) {
             arr[i] = n - i;
         }
@@ -48,23 +42,19 @@ void generarArreglo(int arr[], int n, int patron, unsigned semilla) {
             arr[b] = temp;
         }
     } else {
-
         for (int i = 0; i < n; i++) {
             arr[i] = gen() % 5;
         }
     }
 }
 
+// ALGORITMOS DE ORDENAMIENTO
 
-//ALGORITMOS DE ORDENAMIENTO
-
-
-//  Insercion 
+// Insercion
 void insercion(int arr[], int n) {
     for (int i = 1; i < n; i++) {
         int key = arr[i];    
         int j = i - 1;
-
 
         while (j >= 0 && arr[j] > key) {
             arr[j + 1] = arr[j];
@@ -75,7 +65,9 @@ void insercion(int arr[], int n) {
 }
 
 // Quicksort 
+
 int particion(int arr[], int bajo, int alto) {
+
     int medio = (bajo + alto) / 2;
     int temp = arr[medio];
     arr[medio] = arr[alto];
@@ -103,8 +95,38 @@ void quickSort(int arr[], int bajo, int alto) {
     if (bajo < alto) {
         int pi = particion(arr, bajo, alto);
         quickSort(arr, bajo, pi - 1);    
-        quickSort(arr, pi + 1, alto);    
+        quickSort(arr, pi + 1, alto);  
     }
+}
+
+
+//DEMO
+
+void imprimir(const int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+void copiar(const int origen[], int destino[], int n) {
+    for (int i = 0; i < n; i++) {
+        destino[i] = origen[i];
+    }
+}
+
+bool estaOrdenado(const int arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        if (arr[i - 1] > arr[i]) return false;
+    }
+    return true;
+}
+
+bool sonIguales(const int a[], const int b[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (a[i] != b[i]) return false;
+    }
+    return true;
 }
 
 int main() {
