@@ -130,5 +130,33 @@ bool sonIguales(const int a[], const int b[], int n) {
 }
 
 int main() {
+    const int N = 10;
+    const unsigned SEMILLA = 42;
+    int original[N], a[N], b[N];
+
+    cout << "=== Patrones (n = " << N << ", semilla = " << SEMILLA << ") ===" << endl;
+    for (int p = 0; p < NUM_PATRONES; p++) {
+        generarArreglo(original, N, p, SEMILLA);
+        copiar(original, a, N);
+        copiar(original, b, N);
+
+        insercion(a, N);
+        quickSort(b, 0, N - 1);
+
+        cout << "\nPatron: " << nombrePatron(p) << endl;
+        cout << "  Original:  ";
+        imprimir(original, N);
+        cout << "  Insercion: ";
+        imprimir(a, N);
+        cout << "  Quicksort: ";
+        imprimir(b, N);
+
+        if (estaOrdenado(a, N) && estaOrdenado(b, N) && sonIguales(a, b, N)) {
+            cout << "  -> Ambos ordenaron bien" << endl;
+        } else {
+            cout << "  -> ERROR: algo salio mal" << endl;
+        }
+    }
+
     return 0;
 }
