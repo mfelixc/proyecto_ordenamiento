@@ -158,5 +158,18 @@ int main() {
         }
     }
 
+    cout << "\n=== Prueba de la semilla (patron aleatorio) ===" << endl;
+    int x[N], y[N], z[N];
+    generarArreglo(x, N, ALEATORIO, 42);
+    generarArreglo(y, N, ALEATORIO, 42);
+    generarArreglo(z, N, ALEATORIO, 43);
+
+    cout << "semilla 42: "; imprimir(x, N);
+    cout << "semilla 42: "; imprimir(y, N);
+    cout << "semilla 43: "; imprimir(z, N);
+
+    if (sonIguales(x, y, N)) cout << "Misma semilla -> mismo arreglo (correcto)" << endl;
+    if (!sonIguales(x, z, N)) cout << "Otra semilla  -> otro arreglo (correcto)" << endl;
+
     return 0;
 }
