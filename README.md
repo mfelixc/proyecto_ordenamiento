@@ -75,7 +75,7 @@ Tiempo medio (ms) con n = 100 000:
 - Estabilidad: inserción es estable; quicksort no (479 pares de claves iguales fuera de orden con n = 1 000 en duplicados; ver salida de `./estabilidad`).
 
 ## Video de demostración
-Enlace a YouTube:
+Enlace a YouTube: https://youtu.be/YkKy1XAlhNE
 
 ## Commit de la versión final
-Identificador: 
+Identificador: eac7982
