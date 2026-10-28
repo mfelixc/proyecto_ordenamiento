@@ -75,6 +75,3 @@ Tiempo medio (ms) con n = 100 000:
 
 ## Video de demostración
 Enlace a YouTube:
-
-## Commit de la versión final
-Identificador: 

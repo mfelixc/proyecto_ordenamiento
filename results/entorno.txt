@@ -1,7 +1,10 @@
-CPU: Intel(R) Xeon(R) Processor @ 2.80GHz (2 nucleos, 2 hilos)
-RAM: 7.8 GiB
-SO: Ubuntu 24.04.5 LTS (Linux 6.18, contenedor en la nube)
-Compilador: g++ 13.3.0
-Banderas: -O2 -std=c++11
-Semillas: 2025 a 2054 (SEMILLA_BASE = 2024 + repeticion)
-Commit del codigo medido: 83b456b
+Componente	Valor
+Equipo	Laptop (LAPTOP-EIM6OUV8)
+CPU	AMD Ryzen 7 7445HS con Radeon 740M Graphics, frecuencia base 3.20 GHz, [N] núcleos / [N] hilos
+RAM	8 GB instalados (7.23 GB utilizables)
+GPU	NVIDIA GeForce RTX 3050 6 GB y AMD Radeon 740M (no utilizadas; los algoritmos se ejecutan solo en CPU)
+Almacenamiento	SSD/HDD de 477 GB [indica el tipo] (los resultados se escribieron al CSV fuera de la medición)s
+Sistema operativo	Windows [10/11, edición y versión], 64 bits
+Compilador	[g++ x.y.z (MinGW-w64 / MSYS2)]
+Flags	[por ejemplo: -O2 -std=c++17]
+Temporizador	std::chrono::steady_clock, resolución en ms, sin incluir E/S de disco
