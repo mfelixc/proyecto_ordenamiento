@@ -1,0 +1,7 @@
+CPU: Intel(R) Xeon(R) Processor @ 2.80GHz (2 nucleos, 2 hilos)
+RAM: 7.8 GiB
+SO: Ubuntu 24.04.5 LTS (Linux 6.18, contenedor en la nube)
+Compilador: g++ 13.3.0
+Banderas: -O2 -std=c++11
+Semillas: 2025 a 2054 (SEMILLA_BASE = 2024 + repeticion)
+Commit del codigo medido: 83b456b
